@@ -1,4 +1,4 @@
-export const AUTHORIZATION_KEY = 'token'
+export const AUTHORIZATION_KEY = 'Authorization'
 
 export const getAuthorization = () => localStorage.getItem(AUTHORIZATION_KEY)
 
