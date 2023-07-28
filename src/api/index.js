@@ -1,9 +1,9 @@
 import {get} from '@/utils/request.js'
 import {showToast} from "vant";
 
-const default_options = {showError: true, handlerError: e => console.log(e)}
+const def_options = {showError: true, handlerError: e => console.log(e)}
 
-const ApiWrapper = (apiAction, options = default_options) => {
+const ApiWrapper = (apiAction, options = def_options) => {
     return new Promise(resolve => apiAction
         .then(result => resolve({data: result}))
         .catch(e => {
