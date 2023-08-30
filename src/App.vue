@@ -11,8 +11,15 @@
 
 <script setup>
 import {ref} from "vue";
+import {helloApi, smsApi} from "@/api/index.js";
 
 const active = ref(0)
+
+const init = () => {
+  smsApi({
+    phone: '18781075421'
+  }).then(r => console.log(r))
+}
 </script>
 
 <style scoped>

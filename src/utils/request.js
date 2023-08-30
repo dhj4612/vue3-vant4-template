@@ -2,7 +2,7 @@ import axios from 'axios'
 import {getAuthorization, hasAuthorization} from '@/utils/authorization.js'
 
 const instance = axios.create({
-    baseURL: 'http://localhost:8090', timeout: 30000,
+    baseURL: '/api', timeout: 30000,
 })
 const errorWrapper = (status, message, errorData) => {
     return {status, message, errorData}
@@ -34,6 +34,7 @@ instance.interceptors.request.use(
         if (hasAuthorization()) {
             config.headers['token'] = getAuthorization()
         }
+        return config
     },
     e => Promise.reject(e))
 instance.interceptors.response.use(
