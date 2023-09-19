@@ -11,7 +11,7 @@
 
 <script setup>
 import {ref} from "vue";
-import {helloApi, smsApi} from "@/api/index.js";
+import {helloApi, exportApi, smsApi} from "@/api/index.js";
 
 const active = ref(0)
 

@@ -5,7 +5,10 @@ const def_options = {showError: true, handlerError: e => console.log(e)}
 
 const ApiWrapper = (apiAction, options = def_options) => {
     return new Promise(resolve => apiAction
-        .then(result => resolve({data: result}))
+        .then(result => {
+            console.log(result)
+            resolve({data: result})
+        })
         .catch(e => {
             if (options?.showError) {
                 showToast(e.message || '未知错误')
@@ -23,4 +26,8 @@ export const helloApi = (data = {}) => {
 
 export const smsApi = (data = {}) => {
     return ApiWrapper(postForm('/sms/login/send', data))
+}
+
+export const exportApi = (data = {}) => {
+    return ApiWrapper(post('/dropout/export', data))
 }
