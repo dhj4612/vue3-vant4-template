@@ -1,13 +1,23 @@
 <template>
   <h1>HelloWorld</h1>
   <van-button @click="onExport" type="primary" block>export</van-button>
+  <van-button @click="onRequest" type="default">register</van-button>
   <van-date-picker/>
 </template>
 
 <script setup>
 import axios from "axios";
 import {getAuthorization} from "@/utils/authorization.js";
+import {registerApi} from "@/api/index.js";
 
+const onRequest = async () => {
+  const [d, e] = await registerApi({
+    phone: '',
+    realName: '',
+    password: ''
+  })
+  console.log(d, e)
+}
 const onExport = async () => {
   return new Promise((resolve, reject) => {
     axios.post(`/api/dropout/export`, {}, {

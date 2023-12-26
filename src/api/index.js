@@ -7,7 +7,7 @@ const ApiWrapper = (apiAction, options = def_options) => {
     return new Promise(resolve => apiAction
         .then(result => {
             console.log(result)
-            resolve({data: result})
+            resolve([result, undefined])
         })
         .catch(e => {
             if (options?.showError) {
@@ -16,7 +16,7 @@ const ApiWrapper = (apiAction, options = def_options) => {
             if (options?.handlerError) {
                 options.handlerError(e)
             }
-            resolve({error: e})
+            resolve([undefined, e])
         }))
 }
 
@@ -30,4 +30,8 @@ export const smsApi = (data = {}) => {
 
 export const exportApi = (data = {}) => {
     return ApiWrapper(post('/dropout/export', data))
+}
+
+export const registerApi = (data = {}) => {
+    return ApiWrapper(post('/example/json', data))
 }

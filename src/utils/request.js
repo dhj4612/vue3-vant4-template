@@ -1,5 +1,6 @@
 import axios from 'axios'
 import {getAuthorization, hasAuthorization} from '@/utils/authorization.js'
+import {AUTHORIZATION_KEY} from "./authorization.js";
 
 const instance = axios.create({
     baseURL: '/api', timeout: 30000,
@@ -32,7 +33,7 @@ const handlerErrResponse = ({response}) => {
 instance.interceptors.request.use(
     config => {
         if (hasAuthorization()) {
-            config.headers['token'] = getAuthorization()
+            config.headers[AUTHORIZATION_KEY] = getAuthorization()
         }
         return config
     },
