@@ -4,3 +4,4 @@
 - 使用 decimaljs 处理精确数值计算
 - 使用 pinia 进行响应式数据存储
 - 使用 vue-router 进行路由导航
+- 使用 postcss-px-to-viewport 自动处理 px => viewport 单位转换
