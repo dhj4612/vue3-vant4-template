@@ -1,7 +1,6 @@
-# Vue 3 + Vite
-
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
-
-## Recommended IDE Setup
-
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+# Vue 3 + Vant 的移动端h5项目模板
+- 使用 axios 发送网络请求
+- 使用 dayjs 处理时间相关
+- 使用 decimaljs 处理精确数值计算
+- 使用 pinia 进行响应式数据存储
+- 使用 vue-router 进行路由导航
